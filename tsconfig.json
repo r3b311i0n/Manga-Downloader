@@ -1,0 +1,30 @@
+{
+  "compilerOptions": {
+    "module": "es2015",
+    "moduleResolution": "node",
+    "target": "es2015",
+    "sourceMap": true,
+    "inlineSources": true,
+    "outDir": "./dist/",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "es6",
+      "scripthost",
+      "es2016",
+      "es2017"
+    ],
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "jsx": "react",
+    "noImplicitAny": true,
+    "removeComments": true,
+    "typeRoots": [
+      "./typings/"
+    ]
+  },
+  "include": [
+    "./src/**/*",
+    "./test/**/*"
+  ]
+}
