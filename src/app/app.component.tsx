@@ -14,14 +14,14 @@ export default class App extends React.Component<{}, void> {
         }
     }
 
-    private syncDb = async () => {
+    private handleSyncBtnClick = async () => {
         await download();
     };
 
     public render() {
         return (
             <div>
-                <input type="button" value="Sync" onClick={this.syncDb}/>
+                <input type="button" value="Sync" onClick={this.handleSyncBtnClick}/>
             </div>
         );
     }
