@@ -169,7 +169,8 @@
     ],
     "semicolon": [
       true,
-      "always"
+      "always",
+      "ignore-bound-class-methods"
     ],
     "variable-name": [
       true,
