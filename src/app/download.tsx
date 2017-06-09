@@ -3,11 +3,15 @@ import * as fs from 'fs';
 import ErrnoException = NodeJS.ErrnoException;
 import * as http from 'http';
 
-export function download() {
+function download() {
     const file = fs.createWriteStream('dist/scrapings/mangafox.html');
 
-    return new Promise((resolve) => {
+    return new Promise((resolve, reject) => {
         http.get('http://mangafox.me/manga', (response) => {
+            if (response.statusCode < 200 || response.statusCode > 299) {
+                reject(new Error('Download failed: ' + response.statusCode));
+            }
+
             const body: any[] = [];
             response.on('data', (chunk) => body.push(chunk));
             response.on('end', () => {
@@ -40,3 +44,5 @@ function scrape() {
         fs.writeFileSync('dist/json/mangafox.json', JSON.stringify(index));
     });
 }
+
+export {download};
