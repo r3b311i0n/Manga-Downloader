@@ -77,6 +77,7 @@ module.exports = function () {
             'react': 'React',
             'react-dom': 'ReactDOM'
         },
+        target: 'electron',
         devServer: {
             contentBase: [
                 path.join(__dirname, 'public'),
